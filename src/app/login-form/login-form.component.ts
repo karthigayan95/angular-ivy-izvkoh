@@ -8,7 +8,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
-  userNameModel: any;
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
