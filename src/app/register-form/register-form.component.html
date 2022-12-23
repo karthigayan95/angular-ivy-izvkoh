@@ -1,4 +1,5 @@
+<h5>Parent to child</h5>
 <input type="text" placeholder="name" [(ngModel)]="name" />
 <p>{{ name }}</p>
 
-<app-child [name]="name"></app-child>
+<app-child [name]="name" (getResponse)="getResponse($event)"></app-child>

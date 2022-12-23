@@ -10,4 +10,7 @@ export class RegisterFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+  getResponse($event: any) {
+    this.name = $event;
+  }
 }
