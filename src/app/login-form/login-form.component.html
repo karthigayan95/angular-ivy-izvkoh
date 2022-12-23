@@ -2,7 +2,7 @@
 <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
   <div class="form-group">
     <label class="form-label">Username</label>
-    <input type="text" formControlName="username" class="form-control" />
+    <input type="text" [(ngModel)]="userNameModel" class="form-control" />
   </div>
   <div
     *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)"
@@ -26,3 +26,4 @@
   </button>
 </form>
 {{ loginForm.value | json }}
+{{ userNameModel }}
