@@ -19,7 +19,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginFormComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
