@@ -16,8 +16,8 @@ export class LoginFormComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
-  get username() {
-    return this.loginForm.get('username');
+  get f() {
+    return this.loginForm.controls;
   }
   login(value: any) {
     console.log(value);
