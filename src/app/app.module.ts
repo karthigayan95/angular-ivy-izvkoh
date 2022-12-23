@@ -7,6 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { ChildComponent } from './child/child.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiCallService } from './api-call.service';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginFormComponent },
@@ -18,6 +20,7 @@ const routes: Routes = [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
   ],
   declarations: [
@@ -26,6 +29,7 @@ const routes: Routes = [
     RegisterFormComponent,
     ChildComponent,
   ],
+  providers:[ApiCallService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

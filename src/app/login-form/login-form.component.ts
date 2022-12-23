@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiCallService } from '../api-call.service';
 
 @Component({
   selector: 'app-login-form',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private apiCall: ApiCallService) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -20,6 +21,15 @@ export class LoginFormComponent implements OnInit {
     return this.loginForm.controls;
   }
   login(value: any) {
+    this.apiCall.save(value).subscribe(
+      (sub) => {
+        console.log(sub);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+
     console.log(value);
   }
 }
